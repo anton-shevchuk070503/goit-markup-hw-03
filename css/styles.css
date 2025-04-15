@@ -65,8 +65,7 @@ img {
 /* ===== Header ===== */
 .header {
     border-bottom: 1px solid var(--border-color);
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
 }
 
 .header-container {
