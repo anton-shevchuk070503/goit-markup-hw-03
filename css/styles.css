@@ -1,0 +1,338 @@
+/* 
+  B1: Глобальне скидання стилів для h1–h6, p і ul.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Глобальні змінні кольорів (для зручності та відповідності макету) */
+:root {
+    --primary-color: #4d5ae5;
+    /* Основний акцент */
+    --secondary-color: #2e2f42;
+    /* Основний текстовий колір */
+    --bg-dark: #2e2f42;
+    /* Темний фон */
+    --bg-light: #f4f4fd;
+    /* Світлий фон */
+    --accent-color: #ffffff;
+    /* Білий */
+    --text-color: #434455;
+    /* Додатковий текстовий колір */
+    --border-color: #e0e0e0;
+    /* Для нижньої рамки header */
+    --portfolio-border: #ccc;
+    /* Для рамки карток Portfolio */
+}
+
+/* 
+  Загальні стилі для body, використання системи скидання зовнішніх відступів (B2, B3, B12)
+*/
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    line-height: 1.5;
+}
+
+/* 
+  B6, B8, B9: .container для центрування та обмеження ширини контенту
+  Ширина встановлена відповідно до макету – 1158px.
+*/
+.container {
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header та навігація */
+/* B13: нижня рамка у header */
+.header {
+    background-color: var(--accent-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.nav {
+    display: flex;
+    /* B10: Flexbox для горизонтального розташування */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    /* B4, B5: відступи всередині блоку */
+}
+
+.logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo-span {
+    color: var(--secondary-color);
+}
+
+.nav-list {
+    display: flex;
+    /* Flex для горизонтального розташування посилань */
+    gap: 20px;
+    /* B3, B5: вертикальні/горизонтальні відступи */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #404bbf;
+}
+
+/* Contacts */
+.contacts {
+    font-style: normal;
+    padding: 10px 0;
+    /* Внутрішні відступи між елементами (B4) */
+}
+
+.contacts-list {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: var(--text-color);
+    letter-spacing: 0.02em;
+    transition: color 0.3s;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: #404bbf;
+}
+
+/* 
+  B15: Універсальний клас .section для секцій із верхнім і нижнім падінгом 120px
+  B14: Секції без зовнішніх відступів – відступи між ними формуються через внутрішні поля
+*/
+.section {
+    padding: 120px 0;
+    /* Не використовуємо зовнішні margin, щоб секції "складали стопку" */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background-color: var(--bg-dark);
+    color: var(--accent-color);
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    /* B3: вертикальні відступи між елементами */
+}
+
+.hero-button {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: none;
+    /* Усунення стандартної рамки */
+    padding: 10px 20px;
+    /* B4, B5: внутрішні відступи */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+    background-color: #404bbf;
+}
+
+/* Approach Section */
+.approach {
+    background-color: var(--accent-color);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    /* B3: вертикальні відступи */
+}
+
+.approach-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* B3, B5: відступи між елементами */
+}
+
+/* B5: Обчислення ширини кожного елемента (для 4 елементів в рядку) */
+.approach-item {
+    background-color: var(--accent-color);
+    padding: 20px;
+    /* B4, B5: внутрішні поля */
+    text-align: center;
+    flex: 1 1 calc((1158px - 3 * 20px) / 4);
+}
+
+.approach-title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.approach-text {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+}
+
+/* Team Section */
+.team {
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.team-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-item {
+    flex: 1 1 calc((1158px - 3 * 20px) / 4);
+    text-align: center;
+}
+
+.team-member {
+    background-color: var(--accent-color);
+    padding: 20px;
+}
+
+.team-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+}
+
+.team-name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.team-role {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+}
+
+/* Portfolio Section */
+.portfolio {
+    background-color: var(--accent-color);
+    text-align: center;
+}
+
+.portfolio-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* B16: Рамка лише в нижній частині кожної картки */
+.portfolio-item {
+    flex: 1 1 calc((1158px - 5 * 20px) / 6);
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--portfolio-border);
+}
+
+.portfolio-item img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 10px;
+}
+
+.portfolio-title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+.portfolio-category {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--accent-color);
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-logo {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-logo-span {
+    color: var(--accent-color);
+}
+
+.footer-text {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--text-color);
+    margin-top: 10px;
+}
